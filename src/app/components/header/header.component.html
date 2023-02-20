@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand" type="button"  routerLink="home" (click)="setDocTitleOnRouteChange('Home')">Angular Assignment</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" routerLink="home" routerLinkActive="active" (click)="setDocTitleOnRouteChange('Home')">Home</a>
+        <a class="nav-link" type="button" routerLink="about" routerLinkActive="active" (click)="setDocTitleOnRouteChange('About')">About</a>
+        <a class="nav-link" routerLink="contact" type="button" routerLinkActive="active" (click)="setDocTitleOnRouteChange('Contact')">Contact</a>
+        <a class="nav-link" routerLink="products" type="button" routerLinkActive="active" (click)="setDocTitleOnRouteChange('Products')">Products</a>
+        <a class="nav-link" routerLink="services" type="button" routerLinkActive="active" (click)="setDocTitleOnRouteChange('Services')">Services</a>
+      </div>
+    </div>
+    <div class="d-flex">
+      <h6 class="mx-2">Welcome | <span class="text-primary">{{this.loggedInUserName || 'Default User Name'}}</span></h6>
+      <ul class="navbar-nav ms-auto ms-md-0  me-lg-4">
+        <li class="nav-item dropdown">
+          <a class="dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
+          <ul class="dropdown-menu dropdown-menu-end mt-1" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="'/'">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

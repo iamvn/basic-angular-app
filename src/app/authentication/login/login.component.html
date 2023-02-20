@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div class="container d-flex justify-content-center my-5">
+    <div class="mb-3 d-flex flex-column shadow-sm p-5">
+      <form [formGroup]="loginForm" #loginName="ngForm" (ngSubmit)="login(loginForm)">
+        <label class="form-label">Full Name</label>
+       <input type="text" class="form-control" formControlName="loginName" placeholder="Enter your full name"/>
+        <small class="text-danger" *ngIf="loginName.submitted && loginForm.controls['loginName'].invalid">Please enter your full name</small>
+      <button class="btn btn-primary my-2 w-100" type="submit">Login</button>
+    </form>
+    </div>
+  </div>
+</div>

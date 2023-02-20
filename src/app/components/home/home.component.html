@@ -1,0 +1,37 @@
+<div class="container-fluid">
+<div class="container d-flex flex-column shadow-sm p-3 my-2 rounded-1 custom-border">
+  <div>
+  <h5>Add server section</h5>
+  <form (ngSubmit)="addServer(addServerForm)" [formGroup]="addServerForm" #addFormServer="ngForm" >
+    <div class="mb-3 d-flex flex-column">
+      <label for="exampleFormControlInput1" class="form-label">Server Name</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter server name" formControlName="addServerForm">
+      <small class="text-danger" *ngIf="addFormServer.submitted && addServerForm.controls['addServerForm'].invalid">Please enter the serve name</small>
+      <button type="submit" class="btn btn-primary my-2">Add Server</button>
+    </div>
+<!--    <input type="text" placeholder="enter server name" formControlName="addServerForm"/>-->
+  </form>
+    <h5>{{'Server Name is : '}}<span class="text-success">{{displayServerValue}}</span></h5>
+  </div>
+  <hr/>
+  <div>
+    <label class="form-label">Two way data binding section</label>
+    <input class="form-control" [(ngModel)]="name" placeholder="enter your name"/>
+    <h5 class="my-2"> Your name will appear hear : <span class="text-success">{{name}}</span>  </h5>
+  </div>
+</div>
+
+
+
+<div class="container d-flex flex-column shadow-sm p-3 my-2 rounded-1 custom-border">
+  <h5>Hide and show toggle section</h5>
+  <button type="button" class="btn btn-primary" (click)="hideAndShow()">{{this.showLabel ? 'Hide' : 'Show'}}</button>
+
+  <div class="my-2" *ngIf="this.showLabel">
+    <h5 class="text-success">{{'Hello angular'}}</h5>
+  </div>
+</div>
+
+
+
+</div>
